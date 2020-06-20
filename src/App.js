@@ -99,7 +99,7 @@ function App() {
                     <div className="text-center">
                         <h2 className="section-heading text-uppercase">About Me</h2>
                         <h3 className="section-subheading text-muted">
-                            Hi, i´m a chilean self taught full stack web developer, I also like to develop other stuff, like electronics, or in general programms and algorithms.
+                            Hi, i´m a chilean self taught full stack web developer, I also like to develop other stuff, like electronics, or in general programs and algorithms.
                             <br />
                             Hope you like my projects.
                         </h3>
