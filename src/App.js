@@ -17,6 +17,7 @@ function App() {
         e.preventDefault()
         const target = e.target.innerText
         switch (target) {
+            case 'Felipe Trost':
             case 'About':
                 about.current.scrollIntoView({ behavior: 'smooth' })
                 break;
@@ -53,7 +54,7 @@ function App() {
             <header className="masthead">
                 <Navbar bg="transparent" variant="dark" expand="lg">
                     <Container>
-                        <Navbar.Brand href="#home">Felipe Trost</Navbar.Brand>
+                        <Navbar.Brand onClick={goto}>Felipe Trost</Navbar.Brand>
                         <Navbar.Toggle />
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" as="ul">
 
@@ -118,34 +119,36 @@ function App() {
                     <Row>
                         {projects.map(p => (
                             <Col lg="4" sm="6" className="mb-4" key={p.id}>
-                                <div className="portfolio-item">
-                                    <a className="portfolio-link portfolio-image" rel="noopener noreferrer" target="_blank" href={p.has_pages ? `https://felipetrost.github.io/${p.name}` : p.html_url}>
+                                <div className="hover-effect-card">
+                                    <div className="portfolio-item">
+                                        <a className="portfolio-link portfolio-image" rel="noopener noreferrer" target="_blank" href={p.has_pages ? `https://felipetrost.github.io/${p.name}` : p.html_url}>
 
 
-                                        <div className={"portfolio-hover" + (!p.has_pages ? " grey" : "")}>
-                                            <div className="portfolio-hover-content">
-                                                {p.has_pages ? "Live version" : "Code"}
+                                            <div className={"portfolio-hover" + (!p.has_pages ? " grey" : "")}>
+                                                <div className="portfolio-hover-content">
+                                                    {p.has_pages ? "Live version" : "Code"}
+                                                </div>
                                             </div>
-                                        </div>
 
 
-                                        <img className="img-fluid" onError={imageNotFound} src={`https://raw.githubusercontent.com/FelipeTrost/${p.name}/master/preview.png`} alt={p.name} />
-                                    </a>
-                                    <div className="portfolio-caption">
-                                        <div className="portfolio-caption-heading">{p.name}</div>
-                                        {p.language && (
-                                            <div className="portfolio-caption-subheading text-muted">Stack: {p.language}</div>
-                                        )}
-                                        <div className="portfolio-caption-subheading text-muted">{p.description}</div>
-
-                                        <Row className="justify-content-center buttons">
-                                            {p.has_pages && (
-                                                <Button href={
-                                                    `https://felipetrost.github.io/${p.name}`
-                                                } rel="noopener noreferrer" target="_blank" variant="outline-success" className="m5">Live</Button>
+                                            <img className="img-fluid" onError={imageNotFound} src={`https://raw.githubusercontent.com/FelipeTrost/${p.name}/master/preview.png`} alt={p.name} />
+                                        </a>
+                                        <div className="portfolio-caption">
+                                            <div className="portfolio-caption-heading">{p.name}</div>
+                                            {p.language && (
+                                                <div className="portfolio-caption-subheading text-muted">Stack: {p.language}</div>
                                             )}
-                                            <Button href={p.html_url} rel="noopener noreferrer" target="_blank" variant="outline-secondary">Code</Button>
-                                        </Row>
+                                            <div className="portfolio-caption-subheading text-muted">{p.description}</div>
+
+                                            <Row className="justify-content-center buttons">
+                                                {p.has_pages && (
+                                                    <Button href={
+                                                        `https://felipetrost.github.io/${p.name}`
+                                                    } rel="noopener noreferrer" target="_blank" variant="outline-success" className="m5">Live</Button>
+                                                )}
+                                                <Button href={p.html_url} rel="noopener noreferrer" target="_blank" variant="outline-secondary">Code</Button>
+                                            </Row>
+                                        </div>
                                     </div>
                                 </div>
                             </Col>
