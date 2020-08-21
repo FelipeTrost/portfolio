@@ -8,7 +8,7 @@ header{
     /* Photo by Markus Spiske on Unsplash */
     background: url('bg.jpg');
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-attachment: fixed; */
     background-position: center center;
     background-size: cover;
 }
@@ -121,9 +121,16 @@ header .icons a:hover > svg{
 }
 
 /* PORTFOLIO */
-
+#portfolio .portfolio-items{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+#portfolio .portfolio-items > div{margin: 20px}
 #portfolio .portfolio-item {
-    max-width: 25rem;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
     box-shadow: 3px 3px 4px #888888;
@@ -175,10 +182,11 @@ text-align: center;
 background-color: #fff;
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-heading {
-font-size: 1.5rem;
-font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-font-weight: 700;
-margin-bottom: 0;
+    font-size: 1.5rem;
+    font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-weight: 700;
+    margin-bottom: 0;
+    word-wrap: break-word;
 }
 #portfolio .portfolio-item .portfolio-caption .portfolio-caption-subheading {
     font-style: italic;
