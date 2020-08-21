@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Navbar, Nav, Row, Button, Container, Col } from 'react-bootstrap';
+import { Navbar, Nav, Row, Button, Container } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope as faEmail, faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -108,19 +108,19 @@ function App() {
                 </Container>
             </section>
 
-            <section className="page-section bg-light" id="portfolio" ref={portfolio}>
-                <Container>
+            <section className="page-section bg-light"  ref={portfolio}>
+                <Container id="portfolio">
                     <div className="text-center">
                         <h2 className="section-heading text-uppercase">Projects</h2>
                     </div>
 
-                    {projects.length == 0 && <FontAwesomeIcon icon={faSpinner} spin />}
+                    {projects.length === 0 && <FontAwesomeIcon icon={faSpinner} spin />}
 
-                    <Row>
+                    <div className="portfolio-items">
                         {projects.map(p => (
-                            <Col lg="4" sm="6" className="mb-4" key={p.id}>
-                                <div className="hover-effect-card">
-                                    <div className="portfolio-item">
+                            
+                                <div className="hover-effect-card" key={p.id}>
+                                    <div className="portfolio-item ">
                                         <a className="portfolio-link portfolio-image" rel="noopener noreferrer" target="_blank" href={p.has_pages ? `https://felipetrost.github.io/${p.name}` : p.html_url}>
 
 
@@ -151,10 +151,9 @@ function App() {
                                         </div>
                                     </div>
                                 </div>
-                            </Col>
+                            
                         ))}
-
-                    </Row>
+                    </div>
                 </Container>
             </section>
 
