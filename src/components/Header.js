@@ -10,7 +10,7 @@ const Header = ({ goto }) => (
     <header className="masthead">
         <Navbar bg="transparent" variant="dark" expand="lg">
             <Container>
-                <Navbar.Brand onClick={goto}>Felipe Trost</Navbar.Brand>
+                {/* <Navbar.Brand onClick={goto}>Felipe Trost</Navbar.Brand> */}
                 <Navbar.Toggle />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end" as="ul">
 
