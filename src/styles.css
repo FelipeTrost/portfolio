@@ -6,7 +6,7 @@ header{
     color: #fff;
 
     /* Photo by Markus Spiske on Unsplash */
-    background: url('bg.jpg');
+    background: url('./media/bg.jpg');
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
     background-position: center center;
@@ -102,6 +102,9 @@ header .icons a:hover > svg{
 }
 .page-section.bg-dark{
     color: #fff!important;
+}
+.page-section.bg-grey{
+    background-color: rgb(231, 231, 231)!important;
 }
 .text-center {
     text-align: center !important;
