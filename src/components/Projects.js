@@ -5,6 +5,8 @@ import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 
 import notFound from '../media/not-found.png'
 
+const banned = [262933295, 287635785]
+
 function Projects({ propRef }) {
     const imageNotFound = e => e.target.src = notFound;
 
@@ -16,8 +18,12 @@ function Projects({ propRef }) {
             .then(r => {
                 // This just removes the first item, because its the repo for github pages
                 try {
-                    r.shift();
-                    setProjects(r);
+                    console.log(r)
+                    setProjects(
+                        r
+                            .filter(rep => !rep.fork && !banned.includes(rep.id))
+
+                    );
                 } catch (error) {
                     console.error("wrong response from githutb api")
                 }
